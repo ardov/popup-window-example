@@ -1,0 +1,125 @@
+.app {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 32px;
+  // background-color: aqua;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.cell {
+  padding: 4px 12px;
+  border-bottom: 1px solid #dee3e5;
+}
+
+.mention {
+  padding: 12px;
+  border-bottom: 1px solid #dee3e5;
+  transition: 0.1s;
+
+  &:hover {
+    background-color: #f6f7f7;
+  }
+
+  &:focus-within {
+    background-color: #d5eaf9;
+  }
+
+  &__done > .link {
+    opacity: 0.3;
+  }
+
+  & .link {
+    display: block;
+    text-decoration: none;
+    position: relative;
+  }
+
+  // & a:focus:before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 8px;
+  //   height: 8px;
+  //   background-color: #0071bc;
+  //   border-radius: 50%;
+  //   top: 8px;
+  //   left: -16px;
+  // }
+
+  & .title {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+  }
+  &:hover .title {
+    color: #0071bc;
+  }
+
+  & .url {
+    font-size: 14px;
+    line-height: 20px;
+    color: #757575;
+  }
+
+  & .domain {
+    font-weight: 500;
+  }
+  & .path {
+    color: #aaa;
+    transition: 0.1s;
+  }
+  &:hover .path {
+    color: #757575;
+  }
+
+  & .buttons {
+    margin-top: 8px;
+  }
+}
+
+.btn {
+  min-width: 32px;
+  min-height: 32px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.disabled {
+    transform: scale(0.4);
+  }
+}
+
+.btn + .btn {
+  margin-left: 8px;
+}
+
+@keyframes expandWidth {
+  0% {
+    transform: scaleX(0.001);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.head {
+  position: sticky;
+  top: 0;
+  padding: 8px 0;
+  z-index: 1000;
+}
